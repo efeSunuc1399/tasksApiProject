@@ -17,7 +17,7 @@ class Response {
         $this->_httpStatusCode = $httpStatusCode;
     }
 
-    public function addMessages($message){
+    public function addMessage($message){
         $this->_messages[] = $message;
     }
 
@@ -47,7 +47,7 @@ class Response {
             // 500 stands for 'SERVER ERROR'
             $this->_responseData['statusCode'] = 500;
             $this->_responseData['success'] = false;
-            $this->addMessages("Response Creation Error");
+            $this->addMessage("Response Creation Error");
             $this->_responseData['messages'] = $this->_messages;
         } else {
             http_response_code(200);
